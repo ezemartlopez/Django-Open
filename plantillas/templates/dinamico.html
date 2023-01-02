@@ -6,7 +6,21 @@
     <title>Dinamico</title>
 </head>
 <body>
-    <p>Bienvenido {{name}}</p>
-    <p>{{categorias}} </p>
+    <h1>Bienvenido {{name}}</h1>
+
+
+    <p> Categorias </p>  
+    <ul>
+        {% for categoria in categorias %}
+            {% if categoria == 'code'  %}
+            <li> <b>{{categoria}}</b></li>
+            {% else %}
+                <li> {{categoria}}</li>
+            {% endif %}
+            
+        {% endfor %}
+        
+
+    </ul>
 </body>
 </html>
