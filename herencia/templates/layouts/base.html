@@ -15,22 +15,14 @@
     </title>
 </head>
 <body>
-   
-    <nav>
-        <ul>
-            <li><a href="">Herencia</a></li>
-            <li><a href="">Otra</a></li>
-            <li><a href="">Ejemplo</a></li>
-        </ul>
-    </nav>
+    {% include 'layouts/partials/menu.html' %}
     <main>
         {% block content %}
         
         {% endblock content %}
     </main>
-    <footer>
-        <p>Todos los derechos reservados</p>
-    </footer>
+    {% include "layouts/partials/footer.html" %}
+    
     {% block scripts %}
     
     {% endblock scripts %}
