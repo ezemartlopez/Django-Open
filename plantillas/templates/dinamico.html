@@ -8,19 +8,25 @@
 <body>
     <h1>Bienvenido {{name}}</h1>
 
-
+    {# comentario de una linea #}
+    {% comment "" %}
+    Comentario de 
+    multiples lineas
+    {% endcomment %}
     <p> Categorias </p>  
     <ul>
         {% for categoria in categorias %}
             {% if categoria == 'code'  %}
-            <li> <b>{{categoria}}</b></li>
+            {# usando el filtro upper convierte la categoria a mayuscula #}
+            <li> <b>{{categoria|upper}}</b></li>
             {% else %}
                 <li> {{categoria}}</li>
             {% endif %}
             
         {% endfor %}
-        
-
     </ul>
+
+    {# usando el filtro length que me retorna la longitud del array #}
+    <h3>Total de categorias: {{categorias|length}}</h3>
 </body>
 </html>
