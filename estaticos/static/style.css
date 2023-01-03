@@ -2,3 +2,20 @@ h1{
     font-size: 50px;
     color: red;
 }
+nav{
+    background-color: aquamarine;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul li{
+    padding: 20px;
+}
+
+ul li a{
+    text-decoration: none;
+}
