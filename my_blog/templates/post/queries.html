@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queries</title>
+</head>
+<body>
+    <h2>Buscando autores que contengan 'yes' en su nombre</h2>
+    <ul>
+        {% for author in filtered3 %}
+        <li> ({{author.name}})</li>
+        {% endfor %}  
+    </ul>
+
+    <h2>Buscando elementos cuyo id es menor o igual a 15</h2>
+    <ul>
+        {% for author in filtered2 %}
+        <li> ({{author.email}})</li>
+        {% endfor %}  
+    </ul>
+
+
+    <h2>Elementos ordenados por email</h2>
+    <ul>
+        {% for author in orders %}
+        <li> {{author.email}}</li>
+        {% endfor %}  
+    </ul>
+
+    <h2>Busqueda limitada de {{offsets|length}} autores y con offset</h2>
+    <ul>
+        {% for author in offsets %}
+        <li> {{author.email}}</li>
+        {% endfor %}  
+    </ul>
+
+    <h2>Obteniendo los {{limit|length}} primeros autores (limit)</h2>
+    <ul>
+        {% for author in limit %}
+        <li> {{author.email}}</li>
+        {% endfor %}  
+    </ul>
+
+    <h2>Obteniendo unico elemento (filtrado por id)</h2>
+        <p> {{author.email}} </p>
+    <h2>Buscando autor con el email: {{email_filtered}} </h2>
+    <ul>
+        {% for author in filtered %}
+        <li> {{author.name}} ({{author.email}})</li>
+        {% endfor %}  
+    </ul>
+
+
+    <h2>Todos los autores</h2>
+    <ul>
+        {% for author in authors %}
+        <li> {{author.name}} ({{author.email}})</li>
+        {% endfor %}  
+    </ul>
+    <h3>Total de autores: {{authors|length}} </h3>
+</body>
+</html>
