@@ -3,6 +3,17 @@ from django.http import HttpResponse
 from .models import Author, Entry
 
 # Create your views here.
+def update(request):
+    #Obtengo el author en base al id
+    author = Author.objects.get(id=1)
+    #Modifico los atributos correspondientes
+    author.name = 'Juanjo'
+    author.email = 'juanjo@demo.com'
+    #Guardo los cambios en la base de datos
+    author.save()
+    return HttpResponse('Se actualizo el autor')
+
+
 def queries(req):
     #Obtener todos los elementos
     authors = Author.objects.all()
