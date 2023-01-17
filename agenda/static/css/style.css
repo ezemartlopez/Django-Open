@@ -1,0 +1,17 @@
+:root{
+    --color-primary:#2ea3f2;
+    --color-secondary:#000;
+    --color-text:#666;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Settings Layout*/
+h1,h2,h3,h4{
+    font-family: 'Courier New', Courier, monospace;
+}
+/*End Settings Layout*/

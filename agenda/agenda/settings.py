@@ -123,8 +123,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_DIRS = [
-    BASE_DIR / 'static',
+# Ya que agregue archivos estaticos, agrego esta nueva variable
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
 ]
 
 # Default primary key field type
