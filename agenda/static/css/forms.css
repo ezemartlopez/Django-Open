@@ -17,3 +17,22 @@ input{
     display: flex;
     justify-content: flex-end;
 }
+
+.alert-success{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(33, 203, 107);
+    color: white;
+}
+
+.aux-btns-forms{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.aux-btns-forms a{
+    padding-right: 10px ;
+    text-decoration: none;
+    color: var(--color-secondary);
+}

@@ -1,6 +1,6 @@
 {% extends 'layout/base.html' %}
 
-{% block title %}Crear Contacto{% endblock title %}
+{% block title %} Editar Contacto {{contact.name}} {% endblock title %}
 
 {% block styles %}
 {% load static %}
@@ -23,7 +23,7 @@
 
 
 {% comment "para utilizar un metodo PUT hay que hacer uso de diccionario Querys" %}{% endcomment %}
-<form action="{% url 'contact_create' %}" method="POST">
+<form action="{% url 'contact_edit' id=id %}" method="POST">
     {% csrf_token %}
     <table>
         {{form.as_table}}
