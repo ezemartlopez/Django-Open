@@ -2,5 +2,7 @@ from django.forms import ModelForm
 from .models import Todo
 
 class TodoForm(ModelForm):
-    model = Todo
-    fields = '__all__'
+    class Meta:
+        model = Todo
+        #fields = '__all__'
+        exclude = ('date', )

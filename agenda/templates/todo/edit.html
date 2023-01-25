@@ -1,6 +1,6 @@
 {% extends 'layout/base.html' %}
 
-{% block title %}Crear Tarea{% endblock title %}
+{% block title %} Editar Tarea{% endblock title %}
 
 {% block styles %}
 {% load static %}
@@ -8,6 +8,13 @@
 {% endblock styles %}
 
 {% block content %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %}class="{{message.tags}}"{% endif %}>{{message}} </li>
+        {% endfor %}
+    </ul>
+{% endif %}
 
 <span class="aux-btns-forms">
     <a href="{% url 'todo' %}">Volver</a>
@@ -16,7 +23,7 @@
 
 
 {% comment "para utilizar un metodo PUT hay que hacer uso de diccionario Querys" %}{% endcomment %}
-<form action="{% url 'todo_create' %}" method="POST">
+<form action="{% url 'todo_edit' id=id %}" method="POST">
     {% csrf_token %}
     <table>
         {{form.as_table}}

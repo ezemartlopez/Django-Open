@@ -3,6 +3,7 @@
 {% block title %}Contactos{% endblock title %}
 
 {% block content %}
+    <h1>Contactos</h1>
     <form action="{% url 'contact' %}" class="search" method="get">
         <input type="text" name="search" placeholder="Buscar Contacto...." class="search-bar">
         <input type="submit" value="Buscar" class="btn btn-search">
@@ -18,7 +19,7 @@
             <span> 
                 <a href="{% url 'contact_view' id=contact.id %}" class="btn btn-detail">Ver</a>
                 <a href="{% url 'contact_edit' id=contact.id %}" class="btn btn-edit">Editar</a>
-                <a href="" class="btn btn-delete">Borrar</a>
+                <a href="{% url 'contact_delete' id=contact.id %}" class="btn btn-delete">Borrar</a>
             </span> 
         </li>
         {% endfor %}

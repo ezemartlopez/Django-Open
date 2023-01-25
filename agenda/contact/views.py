@@ -46,3 +46,8 @@ def create(req):
         if form.is_valid():
             form.save()
         return redirect('contact')
+
+def delete(req,id):
+    contact = Contact.objects.get(id=id)
+    contact.delete()
+    return redirect('contact')
