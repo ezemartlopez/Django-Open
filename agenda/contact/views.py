@@ -2,13 +2,25 @@ from django.shortcuts import render, redirect
 from .models import Contact
 from .forms import ContactForm
 from django.contrib import messages
-
+from django.http import HttpResponse
 # Create your views here.
 
-def index(req):
-    contacts = Contact.objects.filter(name__contains = req.GET.get('search',''))
+def index(req, letter = None):
+    '''Esta parte para obtener las letras de los contactos, puede hacerse de manera mas eficiente
+    es decir puedo crear una estructura global (un array), pero este debe modificarse cuando se 
+    hace una edicion, una creacion y un borrado de un contacto. Por ahora se carga cada vez que se
+    ingresa a la pagina index, ya sea con una letra de busqueda o no'''
+    contact_filter = Contact.objects.all()
+    letters_filter = [contact.name[0].upper() for contact in contact_filter]
+    letters_filter.sort()
+    #========================================================================
+    if letter != None:
+        contacts = Contact.objects.filter(name__istartswith = letter)
+    else:
+        contacts = Contact.objects.filter(name__contains = req.GET.get('search',''))
     context ={
-        'contacts':contacts
+        'contacts':contacts,
+        'letters':letters_filter
     }
     return render(req, 'contact/index.html',context=context)
 
