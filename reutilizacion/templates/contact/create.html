@@ -1,0 +1,37 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Crear Contacto{% endblock title %}
+
+{% block styles %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
+{% endblock styles %}
+
+{% block content %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %}class="{{message.tags}}"{% endif %}>{{message}} </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<span class="aux-btns-forms">
+    <a href="{% url 'contact' %}">Volver</a>
+</span>
+
+
+
+{% comment "para utilizar un metodo PUT hay que hacer uso de diccionario Querys" %}{% endcomment %}
+<form action="{% url 'contact_create' %}" method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <div class="btn-wrapper">
+        <input type="submit" value="Enviar" class="btn-send">
+    </div>
+    
+</form>
+
+{% endblock content %}

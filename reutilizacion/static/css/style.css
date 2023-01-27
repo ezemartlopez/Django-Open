@@ -1,0 +1,166 @@
+:root{
+    --color-primary:#2ea3f2;
+    --color-secondary:#000;
+    --color-text:#666;
+    --main: 'Times New Roman', Times, serif;
+    --text:Arial, Helvetica, sans-serif;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--text);
+}
+
+/*Settings Layout*/
+h1,h2,h3,h4{
+    font-family: var(--main);
+}
+nav{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+}
+nav ul{
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 90%;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-family: var(--main);
+    padding: 10px;
+}
+nav ul li a:hover{
+    color: var(--color-text);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 5%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.list{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-text);
+    width: 50%;
+    border-radius: none;
+    list-style-type: none;
+}
+
+.list li{
+    padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid var(--color-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list li:hover{
+    background-color: rgb(225, 223, 223);
+}
+.btn{
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+}
+.btn-detail{
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: white;
+}
+.btn-edit{
+    background-color: #ffee00;
+    border: 1px solid #ffee00;
+    color: white;
+}
+.btn-delete{
+    background-color: #ee1240;
+    border: 1px solid #ee1240;
+    color: white;
+}
+
+
+.btn-detail:hover{
+    background-color: white;
+    color: var(--color-primary);
+}
+.btn-edit:hover{
+    background-color: white;
+    color:#ffee00;
+}
+.btn-delete:hover{
+    background-color: white;
+    color: #ee1240;
+}
+
+.search{
+    margin: 20px;
+    width: 50%;
+}
+.search-bar{
+    width: 85%;
+    padding: 5px;
+}
+
+.btn-search{
+    width: 80px;
+    background-color: var(--color-primary);
+    color: white;
+    outline: none;
+    border: 0;
+    box-shadow: 0;
+    cursor: pointer;
+}
+
+.btn-search:hover{
+    background-color: white;
+    color: var(--color-primary);
+}
+
+.aux-btns{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
+}
+.aux-btns a{
+    padding-right: 10px ;
+    text-decoration: none;
+    color: var(--color-secondary);
+}
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(18, 162, 234, 0.87);
+    margin: 20px;
+    text-decoration: none;
+}
+
+
+/*End Settings Layout*/
